@@ -25,13 +25,4 @@ Based on the Random Forest feature importance extraction, the top operational dr
 2. **Customer Service Calls:** Highlights structural or network frustration compounding before a customer leaves.
 3. **Has Safaricom Home:** Multi-service ecosystem lock-in drastically increases customer retention.
 
-##  How to Use the Saved Model
-```python
-import joblib
 
-# Load the production-ready pipeline
-model = joblib.load('safaricom_churn_model.pkl')
-
-# Generate risk probabilities on new customer data
-probabilities = model.predict_proba(new_customer_data)[:, 1]
-is_at_risk = (probabilities >= 0.2310).astype(int)
